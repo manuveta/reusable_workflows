@@ -1,0 +1,39 @@
+name: Imprimir variables y secretos
+
+on:
+  workflow_call:
+    inputs:
+      VAR_1:
+        required: true
+        type: string
+      VAR_2:
+        required: true
+        type: string
+      SECRETO_2:
+        required: true
+        type: string
+    secrets:
+      SECRETO_1:
+        required: true
+
+
+jobs:
+  imprimir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir variable 1
+        run: echo "La variable es ${{ inputs.VAR_1 }}"
+      - name: Imprimir secreto 1
+        run: echo "El secreto es ${{ secrets.SECRETO_1 }}"
+      - name: Imprimir variable 2
+        run: echo "La variable es ${{ inputs.VAR_2 }}"
+      - name: Imprimir secreto 2
+        run: echo "El secreto 2 es ${{ inputs.SECRETO_2 }}"
+      #  run: |
+      #    if [ -z "${{ secrets.SECRETO_2 }}" ]; 
+      #    then
+      #      echo "Secreto no definido"
+      #    else
+      #      echo "Secreto presente"
+      #    fi
+      #      echo "El secreto es ${{ secrets.SECRETO_2 }}"
