@@ -29,11 +29,3 @@ jobs:
         run: echo "La variable es ${{ inputs.VAR_2 }}"
       - name: Imprimir secreto 2
         run: echo "El secreto 2 es ${{ inputs.SECRETO_2 }}"
-      #  run: |
-      #    if [ -z "${{ secrets.SECRETO_2 }}" ]; 
-      #    then
-      #      echo "Secreto no definido"
-      #    else
-      #      echo "Secreto presente"
-      #    fi
-      #      echo "El secreto es ${{ secrets.SECRETO_2 }}"
