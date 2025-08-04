@@ -1,0 +1,16 @@
+name: Obtener fecha actual
+
+on:
+  workflow_call:
+    outputs:
+      fecha_actual:
+        description: "La fecha actual en formato YYYY-MM-DD"
+        value: ""
+jobs:
+  obtener_fecha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener fecha actual
+        run: |
+          fecha=$(date +'%Y-%m-%d')
+          echo "::set-output name=fecha_actual::$fecha"
